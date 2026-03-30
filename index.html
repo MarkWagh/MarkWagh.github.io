@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mark Karu Wagh — Data / ML / AI Engineer</title>
+<style>
+:root {
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+  --bg: #ffffff;
+  --bg2: #f5f5f7;
+  --text-primary: #1d1d1f;
+  --text-secondary: #6e6e73;
+  --text-tertiary: #86868b;
+  --accent: #0071e3;
+  --accent-hover: #0077ed;
+  --accent-soft: #e8f1fb;
+  --divider: #d2d2d7;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.07);
+  --shadow-md: 0 4px 20px rgba(0,0,0,0.10);
+  --radius: 18px;
+  --radius-sm: 12px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text-primary);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page { max-width: 980px; margin: 0 auto; padding: 0 22px; }
+
+/* ── DIVIDERS ── */
+.section       { padding: 72px 0; }
+.section-alt   { padding: 72px 0; background: var(--bg2); }
+.divider       { border: none; border-top: 1px solid var(--divider); margin: 0; }
+
+.eyebrow {
+  font-size: 13px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 6px;
+}
+
+.section-title {
+  font-size: clamp(1.9rem, 3vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin-bottom: 44px;
+}
+
+/* ════════════════════════════════
+   HERO
+════════════════════════════════ */
+#hero { padding: 88px 0 72px; }
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 52px;
+  align-items: center;
+}
+
+/* Photo */
+.photo-col { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+
+.photo-circle {
+  width: 180px; height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: linear-gradient(145deg, #dce8fd 0%, #c3d5f9 100%);
+  display: flex; align-items: center; justify-content: center;
+  border: 4px solid #fff;
+  box-shadow: 0 0 0 2px var(--divider), var(--shadow-md);
+  position: relative;
+}
+
+.photo-circle img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: top;
+  position: absolute; inset: 0;
+}
+
+.photo-initials {
+  font-size: 3.5rem; font-weight: 300;
+  color: var(--accent); letter-spacing: -0.03em;
+}
+
+.photo-note {
+  font-size: 11px; color: var(--text-tertiary);
+  text-align: center; line-height: 1.5;
+}
+
+/* Hero text */
+.hero-eyebrow {
+  font-size: 14px; font-weight: 500;
+  color: #30d158;
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: 10px;
+}
+
+.live-dot {
+  width: 7px; height: 7px;
+  background: #30d158; border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+.hero-name {
+  font-size: clamp(2.6rem, 5vw, 3.8rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin-bottom: 8px;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem; font-weight: 400;
+  color: var(--text-secondary);
+  margin-bottom: 22px;
+  letter-spacing: -0.01em;
+}
+
+.hero-bio {
+  font-size: 16px; color: var(--text-secondary);
+  line-height: 1.8; max-width: 540px;
+  margin-bottom: 28px;
+}
+
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 9px 18px;
+  background: var(--bg2);
+  border-radius: 980px;
+  font-size: 14px; font-weight: 400;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: background .18s, color .18s;
+}
+
+.chip:hover { background: var(--accent); color: #fff; }
+.chip svg { flex-shrink: 0; }
+
+/* ════════════════════════════════
+   EXPERIENCE
+════════════════════════════════ */
+.exp-list { display: flex; flex-direction: column; }
+
+.exp-item {
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  gap: 32px;
+  padding: 36px 0;
+  border-bottom: 1px solid var(--divider);
+}
+.exp-item:first-child { padding-top: 0; }
+.exp-item:last-child  { border-bottom: none; padding-bottom: 0; }
+
+.exp-meta-period { font-size: 14px; color: var(--text-tertiary); margin-bottom: 4px; }
+.exp-meta-company { font-size: 17px; font-weight: 600; margin-bottom: 2px; }
+.exp-meta-location { font-size: 14px; color: var(--text-tertiary); }
+
+.exp-role {
+  font-size: 20px; font-weight: 600;
+  letter-spacing: -0.012em;
+  margin-bottom: 16px;
+}
+
+.exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+
+.exp-bullets li {
+  font-size: 15px; color: var(--text-secondary);
+  line-height: 1.7;
+  padding-left: 20px; position: relative;
+}
+
+.exp-bullets li::before {
+  content: '';
+  position: absolute; left: 0; top: 10px;
+  width: 6px; height: 6px;
+  background: var(--accent); border-radius: 50%;
+}
+
+/* ════════════════════════════════
+   SKILLS
+════════════════════════════════ */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.skill-card {
+  background: #fff;
+  border: 1px solid var(--divider);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+}
+
+.skill-card-label {
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--text-tertiary); margin-bottom: 18px;
+}
+
+.tag-wrap { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.tag {
+  padding: 6px 14px;
+  background: var(--bg2);
+  border-radius: 980px;
+  font-size: 14px; font-weight: 500;
+  color: var(--text-primary);
+  cursor: default;
+  transition: background .18s, color .18s;
+}
+
+.tag:hover { background: var(--accent); color: #fff; }
+
+.cert-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+
+.cert-item { display: flex; align-items: flex-start; gap: 12px; }
+
+.cert-badge {
+  width: 32px; height: 32px;
+  background: var(--accent-soft);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; flex-shrink: 0; margin-top: 1px;
+}
+
+.cert-text { font-size: 15px; color: var(--text-secondary); line-height: 1.5; }
+
+/* ════════════════════════════════
+   EDUCATION
+════════════════════════════════ */
+.edu-card {
+  background: #fff;
+  border: 1px solid var(--divider);
+  border-radius: var(--radius);
+  padding: 36px;
+  box-shadow: var(--shadow-sm);
+  display: flex; align-items: center; gap: 28px;
+}
+
+.edu-icon {
+  width: 64px; height: 64px;
+  background: var(--accent-soft);
+  border-radius: 18px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 30px; flex-shrink: 0;
+}
+
+.edu-body { flex: 1; }
+.edu-school {
+  font-size: 13px; font-weight: 600;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 4px;
+}
+.edu-degree { font-size: 20px; font-weight: 600; letter-spacing: -.012em; margin-bottom: 4px; }
+.edu-year { font-size: 15px; color: var(--text-tertiary); }
+
+.edu-gpa { text-align: center; flex-shrink: 0; }
+.edu-gpa-num { font-size: 3rem; font-weight: 700; color: var(--accent); letter-spacing: -0.04em; line-height: 1; }
+.edu-gpa-label { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--text-tertiary); margin-top: 4px; }
+
+/* ════════════════════════════════
+   AWARDS
+════════════════════════════════ */
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.award-tile {
+  background: #fff;
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-sm);
+  padding: 24px 20px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow .2s, transform .2s;
+}
+
+.award-tile:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+
+.award-emoji { font-size: 24px; margin-bottom: 10px; display: block; }
+.award-name { font-size: 14px; font-weight: 600; color: var(--text-primary); line-height: 1.4; }
+.award-date { font-size: 13px; color: var(--text-tertiary); margin-top: 4px; }
+
+/* ════════════════════════════════
+   RESEARCH
+════════════════════════════════ */
+.research-card {
+  background: #fff;
+  border: 1px solid var(--divider);
+  border-radius: var(--radius);
+  padding: 40px;
+  box-shadow: var(--shadow-sm);
+}
+
+.research-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 14px;
+  background: var(--accent-soft);
+  border-radius: 980px;
+  font-size: 13px; font-weight: 600;
+  color: var(--accent); margin-bottom: 18px;
+}
+
+.research-title {
+  font-size: 20px; font-weight: 700;
+  letter-spacing: -0.015em; line-height: 1.3;
+  margin-bottom: 18px;
+}
+
+.research-abstract {
+  font-size: 15px; color: var(--text-secondary);
+  line-height: 1.85; margin-bottom: 24px;
+}
+
+.research-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+
+.rtag {
+  padding: 5px 13px;
+  background: var(--bg2);
+  border-radius: 980px;
+  font-size: 13px; color: var(--text-secondary); font-weight: 500;
+}
+
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 24px;
+  background: var(--accent); color: #fff;
+  border-radius: 980px;
+  font-size: 15px; font-weight: 500;
+  text-decoration: none;
+  transition: background .18s;
+}
+.btn-primary:hover { background: var(--accent-hover); }
+
+.btn-dashed {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 24px;
+  background: var(--bg2); color: var(--text-tertiary);
+  border-radius: 980px;
+  font-size: 15px; font-weight: 500;
+  border: 2px dashed var(--divider);
+  cursor: default;
+}
+
+/* ════════════════════════════════
+   SOCIAL / LINKS
+════════════════════════════════ */
+.social-list { display: flex; flex-direction: column; gap: 12px; }
+
+.social-link {
+  display: flex; align-items: center; gap: 16px;
+  padding: 18px 22px;
+  background: #fff;
+  border: 1px solid var(--divider);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  transition: box-shadow .18s, transform .18s;
+}
+
+.social-link:hover { box-shadow: var(--shadow-md); transform: translateY(-1px); }
+
+.social-icon {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; flex-shrink: 0;
+}
+
+.social-info { flex: 1; }
+.social-name { font-size: 15px; font-weight: 600; color: var(--text-primary); }
+.social-handle { font-size: 14px; color: var(--text-tertiary); }
+.social-chevron { font-size: 20px; color: var(--text-tertiary); }
+
+.social-empty {
+  display: flex; align-items: center; gap: 16px;
+  padding: 18px 22px;
+  background: var(--bg2);
+  border: 2px dashed var(--divider);
+  border-radius: var(--radius-sm);
+  font-size: 14px; color: var(--text-tertiary);
+}
+
+/* ════════════════════════════════
+   FOOTER
+════════════════════════════════ */
+footer {
+  background: var(--bg2);
+  border-top: 1px solid var(--divider);
+  padding: 44px 0;
+  text-align: center;
+}
+
+.footer-name { font-size: 17px; font-weight: 600; color: var(--text-primary); margin-bottom: 6px; }
+.footer-sub  { font-size: 14px; color: var(--text-tertiary); }
+
+/* ════════════════════════════════
+   SCROLL REVEAL
+════════════════════════════════ */
+.reveal {
+  opacity: 0; transform: translateY(22px);
+  transition: opacity .55s ease, transform .55s ease;
+}
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ════════════════════════════════
+   HERO ANIMATION
+════════════════════════════════ */
+@keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:none} }
+
+.anim-1 { animation: fadeUp .55s .05s both; }
+.anim-2 { animation: fadeUp .55s .12s both; }
+.anim-3 { animation: fadeUp .55s .19s both; }
+.anim-4 { animation: fadeUp .55s .26s both; }
+.anim-5 { animation: fadeUp .55s .33s both; }
+.anim-6 { animation: fadeUp .55s .40s both; }
+
+/* ════════════════════════════════
+   RESPONSIVE
+════════════════════════════════ */
+@media (max-width: 680px) {
+  .hero-inner  { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+  .hero-bio    { margin: 0 auto 28px; }
+  .chips       { justify-content: center; }
+  .hero-eyebrow{ justify-content: center; }
+  .exp-item    { grid-template-columns: 1fr; gap: 10px; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .awards-grid { grid-template-columns: 1fr 1fr; }
+  .edu-card    { flex-wrap: wrap; }
+  .edu-gpa     { margin: 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════ HERO ══════════════ -->
+<div id="hero">
+  <div class="page">
+    <div class="hero-inner">
+
+      <!-- Left: Photo -->
+      <div class="photo-col anim-1">
+        <div class="photo-circle">
+          <!--
+            ╔══════════════════════════════════╗
+            ║  TO ADD YOUR PHOTO:              ║
+            ║  Delete the <span> below and     ║
+            ║  add: <img src="photo.jpg"       ║
+            ║         alt="Mark Karu Wagh">    ║
+            ╚══════════════════════════════════╝
+          -->
+          <span class="photo-initials">MKW</span>
+        </div>
+        <p class="photo-note">Add your photo — see<br/>comment inside HTML</p>
+      </div>
+
+      <!-- Right: Text -->
+      <div>
+        <div class="hero-eyebrow anim-2">
+          <span class="live-dot"></span>
+          Open to new opportunities
+        </div>
+        <h1 class="hero-name anim-3">Mark Karu Wagh</h1>
+        <p class="hero-subtitle anim-4">Data / ML / AI Engineer &nbsp;·&nbsp; 4+ Years</p>
+        <p class="hero-bio anim-5">
+          Senior Software Analyst with 4+ years building high-performance data and ML solutions on Google Cloud Platform. Specialising in MLOps pipelines, Vertex AI, Apache Airflow, and scalable GenAI infrastructure — with a track record of multiple client awards at Accenture.
+        </p>
+        <div class="chips anim-6">
+          <a href="mailto:mark.wagh20@gmail.com" class="chip">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+            mark.wagh20@gmail.com
+          </a>
+          <a href="https://www.linkedin.com/in/mark-wagh" target="_blank" class="chip">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+          <a href="tel:+918762493494" class="chip">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 12 19.79 19.79 0 011.61 3.4 2 2 0 013.6 1.22h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 8.82a16 16 0 006.29 6.29l.96-.96a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            +91 876 249 3494
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ══════════════ EXPERIENCE ══════════════ -->
+<div class="section">
+  <div class="page">
+    <p class="eyebrow">Experience</p>
+    <h2 class="section-title">Where I've worked</h2>
+
+    <div class="exp-list">
+
+      <div class="exp-item reveal">
+        <div>
+          <div class="exp-meta-period">2021 — 2025</div>
+          <div class="exp-meta-company">Accenture</div>
+          <div class="exp-meta-location">Bangalore, India</div>
+        </div>
+        <div>
+          <div class="exp-role">Senior Software Analyst</div>
+          <ul class="exp-bullets">
+            <li>Built an end-to-end MLOps framework with GitHub Actions — converting model code into Python packages, pushing to Artifactory, building Docker images, and deploying models to Vertex AI endpoints automatically.</li>
+            <li>Established a model API centre routing calls through a proxy layer to Vertex AI endpoints, enabling seamless integration for multiple GenAI models across services.</li>
+            <li>Led CI/CD pipeline development (Concourse + GitHub Actions) for automated deployments and data ingestion via Datastore and Airflow for GenAI models in production.</li>
+            <li>Successfully migrated Apache Airflow from v1.x to v2.x with minimal downtime, maintaining smooth operation of all ML pipelines throughout.</li>
+            <li>Integrated automated container image scanning into CI/CD for proactive security threat detection; implemented a full BCDR plan enabling rapid redeployment of ML infrastructure.</li>
+            <li>Leveraged BigQuery APIs, Airflow DAGs, and Python scripting for data analysis and dynamic DAG generation. Built automated data-quality testing with Great Expectations inside Vertex AI pipelines.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div>
+          <div class="exp-meta-period">Apr 2021 – Jun 2021</div>
+          <div class="exp-meta-company">TCS iON</div>
+          <div class="exp-meta-location">Remote</div>
+        </div>
+        <div>
+          <div class="exp-role">Software Engineering Intern</div>
+          <ul class="exp-bullets">
+            <li>Developed a full-stack event management portal for the Tourism &amp; Hospitality Industry using Django, HTML, CSS, and Bootstrap over 210 hours.</li>
+            <li>Integrated PayPal API for secure online payments and built user registration, login flows, and a complete admin panel.</li>
+            <li>Used Git for version control and collaborative development, delivering a production-ready portal with real-world application.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ══════════════ SKILLS ══════════════ -->
+<div class="section-alt">
+  <div class="page">
+    <p class="eyebrow">Skills</p>
+    <h2 class="section-title">Tools &amp; technologies</h2>
+
+    <div class="skills-grid">
+
+      <div class="skill-card reveal">
+        <div class="skill-card-label">Technical</div>
+        <div class="tag-wrap">
+          <span class="tag">Python</span>
+          <span class="tag">Google Cloud Platform</span>
+          <span class="tag">Vertex AI</span>
+          <span class="tag">BigQuery</span>
+          <span class="tag">Apache Airflow</span>
+          <span class="tag">GitHub Actions</span>
+          <span class="tag">Docker</span>
+          <span class="tag">Kubernetes (GKE)</span>
+          <span class="tag">Concourse CI/CD</span>
+          <span class="tag">MLOps</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Linux</span>
+          <span class="tag">Git</span>
+          <span class="tag">Django</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal">
+        <div class="skill-card-label">Certifications</div>
+        <ul class="cert-list">
+          <li class="cert-item">
+            <div class="cert-badge">☁️</div>
+            <div class="cert-text">Google Cloud Certified — Cloud Digital Leader</div>
+          </li>
+          <li class="cert-item">
+            <div class="cert-badge">🤖</div>
+            <div class="cert-text">Microsoft Certified — Azure AI Fundamentals</div>
+          </li>
+          <li class="cert-item">
+            <div class="cert-badge">🇬🇧</div>
+            <div class="cert-text">Business English — Cambridge Preliminary</div>
+          </li>
+        </ul>
+        <div style="margin-top:28px;">
+          <div class="skill-card-label">Soft Skills</div>
+          <div class="tag-wrap">
+            <span class="tag">Communication</span>
+            <span class="tag">Problem-Solving</span>
+            <span class="tag">Teamwork</span>
+            <span class="tag">Adaptability</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ══════════════ EDUCATION ══════════════ -->
+<div class="section">
+  <div class="page">
+    <p class="eyebrow">Education</p>
+    <h2 class="section-title">Academic background</h2>
+
+    <div class="edu-card reveal">
+      <div class="edu-icon">🎓</div>
+      <div class="edu-body">
+        <div class="edu-school">Gogte Institute of Technology, Belagavi</div>
+        <div class="edu-degree">B.E. in Information Science &amp; Engineering</div>
+        <div class="edu-year">2017 — 2021</div>
+      </div>
+      <div class="edu-gpa">
+        <div class="edu-gpa-num">8.42</div>
+        <div class="edu-gpa-label">CGPA</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ══════════════ AWARDS ══════════════ -->
+<div class="section-alt">
+  <div class="page">
+    <p class="eyebrow">Awards</p>
+    <h2 class="section-title">Recognition &amp; achievements</h2>
+
+    <div class="awards-grid">
+      <div class="award-tile reveal">
+        <span class="award-emoji">⭐</span>
+        <div class="award-name">Client's Spot Award</div>
+        <div class="award-date">December 2023</div>
+      </div>
+      <div class="award-tile reveal">
+        <span class="award-emoji">⭐</span>
+        <div class="award-name">Client's Spot Award</div>
+        <div class="award-date">May 2023</div>
+      </div>
+      <div class="award-tile reveal">
+        <span class="award-emoji">⭐</span>
+        <div class="award-name">Client's Spot Award</div>
+        <div class="award-date">September 2022</div>
+      </div>
+      <div class="award-tile reveal">
+        <span class="award-emoji">⭐</span>
+        <div class="award-name">Client's Spot Award</div>
+        <div class="award-date">April 2022</div>
+      </div>
+      <div class="award-tile reveal">
+        <span class="award-emoji">🎤</span>
+        <div class="award-name">Recognised at Client's Townhall</div>
+        <div class="award-date">June 2022</div>
+      </div>
+      <div class="award-tile reveal">
+        <span class="award-emoji">🏆</span>
+        <div class="award-name">Best Project — Academic Year</div>
+        <div class="award-date">2021</div>
+      </div>
+      <div class="award-tile reveal">
+        <span class="award-emoji">🥉</span>
+        <div class="award-name">3rd Place — I2CONNECT-21 Exhibition</div>
+        <div class="award-date">IEEE Mangalore</div>
+      </div>
+      <div class="award-tile reveal">
+        <span class="award-emoji">🏃</span>
+        <div class="award-name">NCC National Games</div>
+        <div class="award-date">2013</div>
+      </div>
+      <div class="award-tile reveal">
+        <span class="award-emoji">🏃</span>
+        <div class="award-name">58th National Games SGFI</div>
+        <div class="award-date">2012</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ══════════════ RESEARCH ══════════════ -->
+<div class="section">
+  <div class="page">
+    <p class="eyebrow">Research &amp; Publications</p>
+    <h2 class="section-title">Academic work</h2>
+
+    <div class="research-card reveal">
+      <div class="research-pill">📄 &nbsp; Research Paper</div>
+      <div class="research-title">
+        Analysis of EEG Signals to Predict 'Negative Emotions' using OpenBCI
+      </div>
+      <p class="research-abstract">
+        Psychological changes in humans are the result of emotions which occur due to activities in daily life. To understand these changes in behavioral pattern, research on parameters like EEG, blood pressure, temperature of the body, and psychological parameters like Perceived Stress Scale (PSS) has emerged. Emotions are an integral part of our daily lives — based on which an investigation has been made to predict the impact of negative emotions (stress) using Electroencephalogram (EEG) and blood pressure. Collection of EEG signals using the 8-channel OpenBCI device and understanding the pattern of the data collected is performed. A statistical analysis and mathematical representation depicting the relationship among the parameters is developed. The performance of classification algorithms — SVM, KNN, and Decision Tree — on the data collected is compared. Prediction of stress using EEG and BP can help psychiatrists and neuro-specialists to perform quick analysis of subjects.
+      </p>
+      <div class="research-tags">
+        <span class="rtag">EEG</span>
+        <span class="rtag">OpenBCI</span>
+        <span class="rtag">Machine Learning</span>
+        <span class="rtag">SVM</span>
+        <span class="rtag">KNN</span>
+        <span class="rtag">Decision Tree</span>
+        <span class="rtag">Stress Detection</span>
+        <span class="rtag">Neuroscience</span>
+      </div>
+
+      <!--
+        ╔═══════════════════════════════════════╗
+        ║  WHEN YOUR PAPER LINK IS READY:       ║
+        ║  Replace the <span> below with:       ║
+        ║  <a href="https://YOUR-LINK.com"      ║
+        ║     target="_blank"                   ║
+        ║     class="btn-primary">              ║
+        ║    Read Paper →                       ║
+        ║  </a>                                 ║
+        ╚═══════════════════════════════════════╝
+      -->
+      <span class="btn-dashed">🔗 &nbsp; Paper link coming soon</span>
+    </div>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ══════════════ SOCIAL / LINKS ══════════════ -->
+<div class="section-alt">
+  <div class="page">
+    <p class="eyebrow">Connect</p>
+    <h2 class="section-title">Social, posts &amp; blogs</h2>
+
+    <div class="social-list">
+
+      <!-- LinkedIn — already filled in -->
+      <a href="https://www.linkedin.com/in/mark-wagh" target="_blank" class="social-link reveal">
+        <div class="social-icon" style="background:#e7f0fd;">💼</div>
+        <div class="social-info">
+          <div class="social-name">LinkedIn</div>
+          <div class="social-handle">linkedin.com/in/mark-wagh</div>
+        </div>
+        <div class="social-chevron">›</div>
+      </a>
+
+      <!--
+        ╔══════════════════════════════════════════════════════╗
+        ║  HOW TO ADD MORE LINKS:                              ║
+        ║  Copy one <a> block below and fill in your details. ║
+        ║  Examples are pre-written — just uncomment & fill.  ║
+        ╚══════════════════════════════════════════════════════╝
+
+        GitHub:
+        <a href="https://github.com/YOUR-USERNAME" target="_blank" class="social-link">
+          <div class="social-icon" style="background:#f0f0f0;">🐙</div>
+          <div class="social-info">
+            <div class="social-name">GitHub</div>
+            <div class="social-handle">github.com/YOUR-USERNAME</div>
+          </div>
+          <div class="social-chevron">›</div>
+        </a>
+
+        Medium / Blog:
+        <a href="https://medium.com/@YOUR-HANDLE" target="_blank" class="social-link">
+          <div class="social-icon" style="background:#fff8e1;">✍️</div>
+          <div class="social-info">
+            <div class="social-name">Medium</div>
+            <div class="social-handle">medium.com/@YOUR-HANDLE</div>
+          </div>
+          <div class="social-chevron">›</div>
+        </a>
+
+        Twitter / X:
+        <a href="https://twitter.com/YOUR-HANDLE" target="_blank" class="social-link">
+          <div class="social-icon" style="background:#e8f5fd;">🐦</div>
+          <div class="social-info">
+            <div class="social-name">Twitter / X</div>
+            <div class="social-handle">@YOUR-HANDLE</div>
+          </div>
+          <div class="social-chevron">›</div>
+        </a>
+
+        Google Scholar:
+        <a href="https://scholar.google.com/..." target="_blank" class="social-link">
+          <div class="social-icon" style="background:#fce8e6;">🎓</div>
+          <div class="social-info">
+            <div class="social-name">Google Scholar</div>
+            <div class="social-handle">Your publications</div>
+          </div>
+          <div class="social-chevron">›</div>
+        </a>
+      -->
+
+      <!-- Placeholder slots -->
+      <div class="social-empty reveal">
+        <span style="font-size:20px;">➕</span>
+        <span>Add your GitHub — paste link in the comment block above</span>
+      </div>
+      <div class="social-empty reveal">
+        <span style="font-size:20px;">➕</span>
+        <span>Add your Medium / Blog — paste link in the comment block above</span>
+      </div>
+      <div class="social-empty reveal">
+        <span style="font-size:20px;">➕</span>
+        <span>Add your Twitter / X — paste link in the comment block above</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer>
+  <div class="page">
+    <div class="footer-name">Mark Karu Wagh</div>
+    <div class="footer-sub">Data / ML / AI Engineer &nbsp;·&nbsp; mark.wagh20@gmail.com</div>
+  </div>
+</footer>
+
+<script>
+  const items = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 55);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  items.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
